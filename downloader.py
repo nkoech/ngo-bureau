@@ -1,7 +1,7 @@
 import pathlib
 import pandas as pd
 
-from  logger import logger
+from logger import logger
 
 
 NGO_URL = "https://www.ngobureau.go.ug/ngos-search.php"
