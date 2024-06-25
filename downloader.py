@@ -23,9 +23,9 @@ def downdload_data():
     return data
 
 
-def save_data(data):
-    logger.info(f"Saving data to {OUTPUT_FILE}")
-    data.to_csv(OUTPUT_FILE, index=False)
+def save_data(data, output_file: str):
+    logger.info(f"Saving data to {output_file}")
+    data.to_csv(output_file, index=False)
     logger.info("Data saved")
 
 
