@@ -1,14 +1,14 @@
 import pathlib
 import pandas as pd
 
-import logger
+from  logger import logger
 
 
 NGO_URL = "https://www.ngobureau.go.ug/ngos-search.php"
 
 
 def create_output_dir(output_dir: str):
-    logger.info(f"Creating output directory {output_dir}")
+    logger.info(f"Creating output directory: {output_dir}")
     pathlib.Path(output_dir).mkdir(parents=True, exist_ok=True)
     logger.info("Output directory created")
     return pathlib.Path(output_dir)
@@ -16,7 +16,7 @@ def create_output_dir(output_dir: str):
 
 def downdload_data():
     logger.info(f"Downloading data from {NGO_URL}")
-    data = pd.read_html(NGO_URL)
+    data = pd.read_html(NGO_URL)[0]
     logger.info(f"Downdloaded {len(data)} rows")
     return data
 
@@ -24,7 +24,7 @@ def downdload_data():
 def save_data(data, output_file: str):
     logger.info(f"Saving data to {output_file}")
     data.to_csv(output_file, index=False)
-    logger.info("Data saved")
+    logger.info("DONE!")
 
 
 def main():
