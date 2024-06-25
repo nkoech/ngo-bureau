@@ -31,7 +31,8 @@ def save_data(data, output_file: str):
 
 def main():
     data = downdload_data()
-    save_data(data)
+    output_dir = create_output_dir("output")
+    save_data(data, output_dir / "data.csv")
 
 
 if __name__ == "__main__":
