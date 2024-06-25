@@ -5,8 +5,6 @@ import logger
 
 
 NGO_URL = "https://www.ngobureau.go.ug/ngos-search.php"
-OUTPUT_DIR = "output"
-OUTPUT_FILE = OUTPUT_DIR / "data.csv"
 
 
 def create_output_dir(output_dir: str):
