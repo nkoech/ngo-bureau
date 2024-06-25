@@ -5,8 +5,15 @@ import logger
 
 
 NGO_URL = "https://www.ngobureau.go.ug/ngos-search.php"
-OUTPUT_DIR = pathlib.Path("output").mkdir(parents=True, exist_ok=True)
+OUTPUT_DIR = "output"
 OUTPUT_FILE = OUTPUT_DIR / "data.csv"
+
+
+def create_output_dir(output_dir: str):
+    logger.info(f"Creating output directory {output_dir}")
+    pathlib.Path(output_dir).mkdir(parents=True, exist_ok=True)
+    logger.info("Output directory created")
+    return pathlib.Path(output_dir)
 
 
 def downdload_data():
